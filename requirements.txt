@@ -1,0 +1,3 @@
+PySide6>=6.9
+openpyxl>=3.1      # exportar reportes a Excel
+reportlab>=4.0     # exportar reportes a PDF
