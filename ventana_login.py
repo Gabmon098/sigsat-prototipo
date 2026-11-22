@@ -44,13 +44,11 @@ class VentanaLogin(QWidget):
         subtitulo = QLabel("Sistema de Gestión de Solicitudes\ny Seguimiento de Atención de Tickets")
         subtitulo.setWordWrap(True)
         subtitulo.setStyleSheet("color:#C9D6EA; font-size: 13px; margin-top: 6px;")
-        empresa = QLabel("TechSolve México, S.A. de C.V.")
-        empresa.setStyleSheet("color:#8FA6C9; font-size: 12px; margin-top: 40px;")
 
         lay_izq.addWidget(titulo)
         lay_izq.addWidget(subtitulo)
         lay_izq.addStretch()
-        lay_izq.addWidget(empresa)
+        
 
         panel_der = QFrame()
         panel_der.setObjectName("panelLoginDer")
@@ -60,7 +58,7 @@ class VentanaLogin(QWidget):
 
         encabezado = QLabel("Iniciar sesión")
         encabezado.setStyleSheet(f"font-size: 22px; font-weight: 700; color:{AZUL_OSCURO};")
-        ayuda = QLabel("Ingresa con tu cuenta. Tus permisos dependen del rol asignado a ella.")
+        ayuda = QLabel("Ingresa con tu cuenta.")
         ayuda.setStyleSheet("color:#64748B; margin-bottom: 20px;")
         ayuda.setWordWrap(True)
 
@@ -121,9 +119,6 @@ class VentanaLogin(QWidget):
         lay_der.addWidget(self.btn_registro)
         lay_der.addStretch()
 
-        nota = QLabel("Prototipo de interfaz — Sprint 2 · Diseño de proyectos de sistemas informáticos")
-        nota.setStyleSheet("color:#94A3B8; font-size: 11px;")
-        lay_der.addWidget(nota)
 
         layout.addWidget(panel_izq)
         layout.addWidget(panel_der, 1)
