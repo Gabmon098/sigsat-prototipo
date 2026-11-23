@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import (
+﻿from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton,
     QFrame, QCheckBox
 )
@@ -48,6 +48,7 @@ class VentanaLogin(QWidget):
         lay_izq.addWidget(titulo)
         lay_izq.addWidget(subtitulo)
         lay_izq.addStretch()
+        
 
         panel_der = QFrame()
         panel_der.setObjectName("panelLoginDer")
@@ -117,6 +118,7 @@ class VentanaLogin(QWidget):
         self.btn_registro.clicked.connect(self._crear_cuenta)
         lay_der.addWidget(self.btn_registro)
         lay_der.addStretch()
+
 
         layout.addWidget(panel_izq)
         layout.addWidget(panel_der, 1)
