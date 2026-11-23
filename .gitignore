@@ -1,6 +1,10 @@
+# Datos que genera la aplicación al usarse (cuentas, solicitudes, adjuntos, respaldos, correos de prueba)
+datos_sigsat/
 __pycache__/
 *.pyc
-.venv/
-venv/
-datos_sigsat/
-*.log
+
+.venv_build/
+build/
+dist/
+salida/
+*.spec

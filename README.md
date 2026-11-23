@@ -95,3 +95,14 @@ pruebas/          # unittest (Qt en modo offscreen)
 ```
 
 La interfaz solo muestra; toda regla de negocio y permiso vive en `datos.py` / `permisos.py`.
+
+
+## Generar el instalador de Windows (.exe)
+
+Opción A, en tu PC con Windows: instala Python 3.10+ e [Inno Setup 6](https://jrsoftware.org/isinfo.php) y ejecuta
+`build_windows.bat` dentro de esta carpeta. Genera `dist\SIGSAT\SIGSAT.exe` y `salida\SIGSAT_Instalador.exe`.
+
+Opción B, desde GitHub: en la pestaña **Actions** ejecuta «Construir instalador de Windows»; al terminar, descarga el
+artefacto `SIGSAT_Instalador`.
+
+La versión instalada guarda sus datos en `%LOCALAPPDATA%\SIGSAT\datos_sigsat` (no se borran al desinstalar).

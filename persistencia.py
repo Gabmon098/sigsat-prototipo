@@ -26,6 +26,7 @@ import json
 import logging
 import os
 import re
+import sys
 import tempfile
 import zipfile
 from datetime import datetime
@@ -60,7 +61,14 @@ class DatosDeOtraVersion(ErrorPersistencia):
 # --------------------------------------------------------------------------
 
 def carpeta_por_defecto() -> Path:
-    return Path(os.environ.get("SIGSAT_DATOS") or Path(__file__).resolve().parent / "datos_sigsat")
+    """Variable SIGSAT_DATOS si existe; en la versión instalada (.exe) los datos van a la carpeta del usuario
+    (%LOCALAPPDATA%\\SIGSAT), porque la carpeta de instalación puede ser de solo lectura; en desarrollo, junto al código."""
+    if os.environ.get("SIGSAT_DATOS"):
+        return Path(os.environ["SIGSAT_DATOS"])
+    if getattr(sys, "frozen", False):
+        base = os.environ.get("LOCALAPPDATA") or str(Path.home())
+        return Path(base) / "SIGSAT" / "datos_sigsat"
+    return Path(__file__).resolve().parent / "datos_sigsat"
 
 
 def activa() -> bool:
